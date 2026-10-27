@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Añadir juego - Formulario</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#16213e">
+    <meta name="mobile-web-app-capable" content="yes">
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <span class="emoji">🎮</span>
+            Añadir juego
+        </h1>
+
+        <form id="formulario-juego">
+            <!-- ========== NOMBRE ========== -->
+            <div class="campo campo-icon">
+                <label for="nombre">
+                    <span class="label-icon">📝</span>
+                    Nombre del juego
+                    <span class="required">*</span>
+                </label>
+                <input 
+                    type="text" 
+                    id="nombre" 
+                    name="nombre" 
+                    placeholder="Ej: Hollow Knight" 
+                    required 
+                    minlength="2"
+                    maxlength="100"
+                    autofocus
+                >
+                <span class="icon">🎯</span>
+                <span class="help-text">Mínimo 2 caracteres, máximo 100</span>
+            </div>
+
+            <!-- ========== DESARROLLADOR ========== -->
+            <div class="campo campo-icon">
+                <label for="desarrollador">
+                    <span class="label-icon">🏢</span>
+                    Desarrollador
+                    <span class="required">*</span>
+                </label>
+                <input 
+                    type="text" 
+                    id="desarrollador" 
+                    name="desarrollador" 
+                    placeholder="Ej: Team Cherry" 
+                    required 
+                    minlength="2"
+                    maxlength="100"
+                >
+                <span class="icon">👨‍💻</span>
+                <span class="help-text">Nombre del estudio o desarrollador</span>
+            </div>
+
+            <!-- ========== PLATAFORMA ========== -->
+            <div class="campo campo-icon">
+                <label for="plataforma">
+                    <span class="label-icon">🖥️</span>
+                    Plataforma
+                    <span class="required">*</span>
+                </label>
+                <select id="plataforma" name="plataforma" required>
+                    <option value="">🔽 Selecciona una plataforma</option>
+                    <option value="pc">💻 PC</option>
+                    <option value="playstation">🎮 PlayStation</option>
+                    <option value="xbox">🎮 Xbox</option>
+                    <option value="switch">🎮 Nintendo Switch</option>
+                    <option value="movil">📱 Móvil</option>
+                    <option value="mesa">🎲 Juego de mesa</option>
+                    <option value="otros">❓ Otros</option>
+                </select>
+                <span class="icon">🎮</span>
+            </div>
+
+            <!-- ========== GÉNERO ========== -->
+            <div class="campo campo-icon">
+                <label for="genero">
+                    <span class="label-icon">🎭</span>
+                    Género
+                    <span class="required">*</span>
+                </label>
+                <select id="genero" name="genero" required>
+                    <option value="">🔽 Selecciona un género</option>
+                    <option value="accion">⚔️ Acción</option>
+                    <option value="aventura">🗺️ Aventura</option>
+                    <option value="rpg">🧙 RPG</option>
+                    <option value="shooter">🔫 Shooter</option>
+                    <option value="estrategia">♟️ Estrategia</option>
+                    <option value="plataformas">🏃 Plataformas</option>
+                    <option value="deportes">⚽ Deportes</option>
+                    <option value="carreras">🏎️ Carreras</option>
+                    <option value="terror">👻 Terror</option>
+                    <option value="indie">🎨 Indie</option>
+                </select>
+                <span class="icon">🎯</span>
+            </div>
+
+            <!-- ========== AÑO ========== -->
+            <div class="campo campo-icon">
+                <label for="anio">
+                    <span class="label-icon">📅</span>
+                    Año de lanzamiento
+                </label>
+                <input 
+                    type="number" 
+                    id="anio" 
+                    name="anio" 
+                    placeholder="2015" 
+                    min="1970" 
+                    max="2026"
+                >
+                <span class="icon">🗓️</span>
+                <span class="help-text">Entre 1970 y 2026</span>
+            </div>
+
+            <!-- ========== PUNTUACIÓN ========== -->
+            <div class="campo campo-icon">
+                <label for="puntuacion">
+                    <span class="label-icon">⭐</span>
+                    Puntuación (1-10)
+                </label>
+                <input 
+                    type="number" 
+                    id="puntuacion" 
+                    name="puntuacion" 
+                    min="1" 
+                    max="10" 
+                    placeholder="9"
+                    step="0.5"
+                >
+                <span class="icon">🌟</span>
+                <span class="help-text">Valor entre 1 y 10 (puedes usar decimales)</span>
+            </div>
+
+            <!-- ========== PRECIO ========== -->
+            <div class="campo campo-icon">
+                <label for="precio">
+                    <span class="label-icon">💰</span>
+                    Precio (€)
+                </label>
+                <input 
+                    type="number" 
+                    id="precio" 
+                    name="precio" 
+                    step="0.01" 
+                    placeholder="29.99" 
+                    min="0"
+                    max="999.99"
+                >
+                <span class="icon">💶</span>
+                <span class="help-text">Precio en euros (ej: 29.99)</span>
+            </div>
+
+            <!-- ========== IMAGEN ========== -->
+            <div class="campo campo-icon">
+                <label for="imagen">
+                    <span class="label-icon">🖼️</span>
+                    Imagen del juego
+                </label>
+                <input 
+                    type="file" 
+                    id="imagen" 
+                    name="imagen" 
+                    accept="image/*"
+                >
+                <span class="icon">🔗</span>
+                <span class="help-text">Selecciona una imagen de tu dispositivo</span>
+            </div>
+
+            <!-- ========== DESCRIPCIÓN ========== -->
+            <div class="campo campo-icon">
+                <label for="descripcion">
+                    <span class="label-icon">📄</span>
+                    Descripción
+                    <span class="required">*</span>
+                </label>
+                <textarea 
+                    id="descripcion" 
+                    name="descripcion" 
+                    rows="4" 
+                    placeholder="Describe el juego en detalle..." 
+                    required
+                    minlength="10"
+                    maxlength="1000"
+                ></textarea>
+                <span class="icon">✍️</span>
+                <span class="help-text">Mínimo 10 caracteres, máximo 1000</span>
+            </div>
+
+            <!-- ========== RECOMENDACIÓN ========== -->
+            <div class="campo campo-icon">
+                <label for="recomendacion">
+                    <span class="label-icon">💡</span>
+                    ¿Por qué lo recomiendas?
+                    <span class="required">*</span>
+                </label>
+                <textarea 
+                    id="recomendacion" 
+                    name="recomendacion" 
+                    rows="3" 
+                    placeholder="Cuéntanos qué te gustó del juego..." 
+                    required
+                    minlength="10"
+                    maxlength="500"
+                ></textarea>
+                <span class="icon">❤️</span>
+                <span class="help-text">Mínimo 10 caracteres, máximo 500</span>
+            </div>
+
+            <!-- ========== MULTIJUGADOR ========== -->
+            <div class="campo checkbox">
+                <input 
+                    type="checkbox" 
+                    id="multijugador" 
+                    name="multijugador" 
+                    value="si"
+                >
+                <label for="multijugador">
+                    <span class="label-icon">👥</span>
+                    Tiene multijugador
+                </label>
+            </div>
+
+            <!-- ========== BOTÓN ========== -->
+            <button type="submit" class="btn-enviar">
+                <span class="btn-icon">➕</span>
+                Añadir juego
+            </button>
+        </form>
+    </div>
+
+        <!--INSERT DE LAS TARJETAS DE SERIES----------->
+<!-- SECCIÓN CATÁLOGO / LISTADO (NUEVO) -->
+    <section class="catalog-section">
+      <h2>Series Recomendadas</h2>
+      <div id="grid-series" class="grid-cards">
+        <!-- Las tarjetas se cargarán dinámicamente desde JavaScript -->
+      </div>
+    </section>
+
+    <script src="supabaseClient.js" type="module"></script>
+    <script src="main2.js" type="module"></script>
+
+</body>
+</html>
